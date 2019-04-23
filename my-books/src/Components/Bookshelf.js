@@ -10,22 +10,22 @@ class Bookshelf extends Component{
                 {
                     title: "Title:",
                     author: "Author:",
-                    year: "Year:",
-                    genre: "Genre:"
+                    year: "Year: 1954",
+                    genre: "Genre:Fantasy/Adventure"
                 },
                 {
                     title: "Title:",
                     author: "Author:",
-                    year: "Year:",
-                    genre: "Genre:"
+                    year: "Year: 1954",
+                    genre: "Genre:Fantasy/Adventure"
                 },
                 {
                     title: "Title:",
-                    author: "Author:",
-                    year: "Year:",
-                    genre: "Genre:"
+                    author: "Author: J.R.R Tolkien",
+                    year: "Year: 1955",
+                    genre: "Genre:Fantasy/Adventure"
                 }
-            ]
+            ],
         }
     }
     addBook() {
