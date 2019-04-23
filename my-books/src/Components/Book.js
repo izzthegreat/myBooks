@@ -7,6 +7,10 @@ const GENERIC_NOTE_YEAR = "1991", GENERIC_NOTE_GENRE = "New";
 class Book extends Component {
     constructor() {
         super();
+        this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
     }
     componentWillMount() {
         this.state = {
@@ -17,6 +21,11 @@ class Book extends Component {
             editMode: false
         }
     }
+    handleClick() {
+        this.setState(state => ({
+          isToggleOn: !state.isToggleOn
+        }));
+      }
     handleEdit(){
         this.setState({
             editMode: true
@@ -48,7 +57,7 @@ class Book extends Component {
             yearElement = <h5>{this.state.year}</h5>
             genreElement = <h5>{this.state.genre}</h5>
             buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
-            readButton = <button className="btn btn-info" onClick={this.value = "read"}>Unread</button>
+            readButton = <button onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
         }
         
         return (
