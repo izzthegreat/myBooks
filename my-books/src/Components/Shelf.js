@@ -6,7 +6,12 @@ class Shelf extends Component{
     constructor(){
         super();
         this.state = {
+<<<<<<< Updated upstream
             books: [],
+=======
+            books: [
+            ]
+>>>>>>> Stashed changes
         }
     }
     addBook() {
@@ -14,6 +19,7 @@ class Shelf extends Component{
           id: Date.now()
         });
         this.setState({
+<<<<<<< Updated upstream
           notes: this.state.books
         });
       }
@@ -29,16 +35,39 @@ class Shelf extends Component{
           notes: newBookArr
         });
       }
+=======
+          books: this.state.books
+        });
+      }
+    deleteBook(id) {
+        let newBookArr = this.state.books;
+        newBookArr.map((book, index) => {
+            if (id === book.id) {
+            newBookArr.splice(index, 1);
+            }
+        });
+        this.setState({
+            notes: newBookArr
+        });
+>>>>>>> Stashed changes
     }
     render() {
+        
         return (
             <div>
                 <div className="div-bookshelf">
                     <div className="row">
                     {
+<<<<<<< Updated upstream
                     this.state.books.map(book => {
                          return <Book title={book.title} author={book.author} year={book.year} genre= {book.genre}/>
                     })
+=======
+                        this.state.books.map(book => {
+                            return <Book key={book.id}id={book.id}deleteHandler={this.deleteBook.bind(this)}
+                />
+                        })
+>>>>>>> Stashed changes
                     }
                     </div>
                 </div>        

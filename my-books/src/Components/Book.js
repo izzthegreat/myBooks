@@ -3,7 +3,11 @@ import '../CSS/Book.css';
 import PropTypes from 'prop-types';
 
 const GENERIC_NOTE_TITLE = "New Note Title", GENERIC_NOTE_AUTHOR = "New Note Body";
+<<<<<<< Updated upstream
 const GENERIC_NOTE_YEAR = "New", GENERIC_NOTE_GENRE = "";
+=======
+const GENERIC_NOTE_YEAR = "1991", GENERIC_NOTE_GENRE = "New";
+>>>>>>> Stashed changes
 class Book extends Component {
     constructor() {
         super();
@@ -11,11 +15,20 @@ class Book extends Component {
     componentWillMount() {
         this.state = {
             title: GENERIC_NOTE_TITLE,
+<<<<<<< Updated upstream
             body: GENERIC_NOTE_AUTHOR,
             editMode: false
         }
     }
 
+=======
+            author: GENERIC_NOTE_AUTHOR,
+            year: GENERIC_NOTE_YEAR,
+            genre: GENERIC_NOTE_GENRE,
+            editMode: false
+        }
+    }
+>>>>>>> Stashed changes
     handleEdit(){
         this.setState({
             editMode: true
@@ -25,13 +38,21 @@ class Book extends Component {
     handleSave(){
         this.setState({
             title: this.refs.titleContent.value,
+<<<<<<< Updated upstream
             body: this.refs.bodyContent.value,
+=======
+            author: this.refs.authorContent.value,
+>>>>>>> Stashed changes
             editMode: false
         })
     }
     handleDelete(){
         this.props.deleteHandler(this.props.id);
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     render(){
         let titleElement, authorElement, yearElement, genreElement, buttonArea;
         if(this.state.editMode){
@@ -48,6 +69,7 @@ class Book extends Component {
             buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
 
         }
+<<<<<<< Updated upstream
 
         return (
             <div className="col-sm-3">
@@ -63,6 +85,27 @@ class Book extends Component {
             <div><button className="btn btn-warning delete-button">Delete</button> </div>
             </div>
             </div>
+=======
+        
+        return (
+            <div className="col-3">
+                <div className="card card-view">
+                    <div className="card-body">
+                        <div className="spine">
+                            <div className="spine-text">
+                                <h4 className="card-title">
+                                    {titleElement}
+                                </h4>
+                                {authorElement}
+                            </div>
+                        </div>
+                        <div className="buttons">
+                            {yearElement}<br/>
+                            {buttonArea}
+                        </div>
+                    </div>
+                </div>
+>>>>>>> Stashed changes
             </div>
         )
     }
@@ -78,7 +121,7 @@ Book.defaultProps = {
 Book.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
-    year: PropTypes.string,
+    year: PropTypes.number,
     genre: PropTypes.string
 }
 
