@@ -3,7 +3,7 @@ import '../CSS/Book.css';
 import PropTypes from 'prop-types';
 
 const GENERIC_NOTE_TITLE = "Title", GENERIC_NOTE_AUTHOR = "Author";
-const GENERIC_NOTE_YEAR = "XXXX", GENERIC_NOTE_GENRE = "Genre";
+const GENERIC_NOTE_YEAR = "0000", GENERIC_NOTE_GENRE = "Genre";
 class Book extends Component {
     constructor() {
         super();
@@ -21,7 +21,7 @@ class Book extends Component {
     }
     handleClick() {
         this.setState(state => ({
-          isToggleOn: !state.isToggleOn
+          isToggleOn: !state.isToggleOn,
         }));
       }
     handleEdit(){
@@ -55,7 +55,7 @@ class Book extends Component {
             yearElement = <h5>{this.state.year}</h5>
             genreElement = <h5>{this.state.genre}</h5>
             buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
-            readButton = <button onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
+            readButton = <button className="btn btn-primary" onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
         }
         
         return (
@@ -93,7 +93,7 @@ Book.defaultProps = {
 Book.propTypes = {
     title: PropTypes.string,
     author: PropTypes.string,
-    year: PropTypes.number,
+    year: PropTypes.string,
     genre: PropTypes.string
 }
 

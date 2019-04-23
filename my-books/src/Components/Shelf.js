@@ -11,26 +11,29 @@ class Shelf extends Component{
                     title: "Player's Handbook",
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
-                    genre: "RPG"
+                    genre: "RPG",
+                    id: performance.now()
                 },
                 {
                     title: "Dungeon Master's Guide",
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
-                    genre: "RPG"
+                    genre: "RPG",
+                    id: performance.now()
                 },
                 {
                     title: "Monster Manual",
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
-                    genre: "GRPG"
+                    genre: "GRPG",
+                    id: performance.now()
                 }
             ]
         }
     }
     addBook() {
         this.state.books.push({
-          id: Date.now()
+          id: performance.now()
         });
         this.setState({
           books: this.state.books
@@ -44,7 +47,7 @@ class Shelf extends Component{
             }
         });
         this.setState({
-            notes: newBookArr
+            books: newBookArr
         });
     }
 

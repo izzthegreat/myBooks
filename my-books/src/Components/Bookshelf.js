@@ -8,16 +8,20 @@ class Bookshelf extends Component{
         this.state = {
             shelves: [
                 {
-                    genre: "Genre"
+                    genre: "Genre",
+                    id: performance.now()
                 },
                 {
-                    genre: "Genre"
+                    genre: "Genre",
+                    id: performance.now()
                 },
                 {
-                    genre: "Genre"
+                    genre: "Genre",
+                    id: performance.now()
                 },
                 {
-                    genre: "Genre"
+                    genre: "Genre",
+                    id: performance.now()
                 }
             ],
             
@@ -25,7 +29,8 @@ class Bookshelf extends Component{
     }
     addShelf() {
         this.state.shelves.push({
-            genre: "Genre"
+            genre: "Genre",
+            id: performance.now()
         });
         this.setState({
             genres: this.state.genres
