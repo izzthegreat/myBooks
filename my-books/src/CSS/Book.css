@@ -1,5 +1,19 @@
 .spine{
-    height: 250px;
-    width: 100px;
-    writing-mode: sideways-rl;
+    height: 350px;
+    width: 150px;
+}
+
+.spine-text{
+    display: inline-block;
+    transform: rotate(90deg) translate(95px, 97px);
+    height: 90px;
+    width: 300px;
+}
+
+.buttons{
+    text-align: center
+}
+
+.btn{
+    width: 90px
 }

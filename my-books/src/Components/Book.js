@@ -67,6 +67,7 @@ class Book extends Component {
                         <div className="spine">
                             <div className="spine-text">
                                 <h4 className="card-title">
+
                                     {titleElement}
                                 </h4>
                                 {authorElement}
@@ -76,6 +77,7 @@ class Book extends Component {
                             {yearElement}<br/>
                             {buttonArea}
                             {readButton}
+
                         </div>
                     </div>
                 </div>
@@ -85,10 +87,10 @@ class Book extends Component {
 }
 
 Book.defaultProps = {
-    title: "Title:",
-    author: "Author:",
-    year: "Year:",
-    genre: "Genre:"
+    title: "Title",
+    author: "Author",
+    year: "Year",
+    genre: "Genre"
 };
 
 Book.propTypes = {
