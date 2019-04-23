@@ -1,58 +1,50 @@
 import React, {Component} from 'react'
-import "../CSS/Book.css"
-import Book from './Book';
+import "../CSS/Bookshelf.css"
+import Shelf from './Shelf';
 
 class Bookshelf extends Component{
     constructor(){
         super();
         this.state = {
-            books: [
+            shelves: [
                 {
-                    title: "Title:",
-                    author: "Author:",
-                    year: "Year: 1954",
-                    genre: "Genre:Fantasy/Adventure"
+                    genre: "Genre"
                 },
                 {
-                    title: "Title:",
-                    author: "Author:",
-                    year: "Year: 1954",
-                    genre: "Genre:Fantasy/Adventure"
+                    genre: "Genre"
                 },
                 {
-                    title: "Title:",
-                    author: "Author: J.R.R Tolkien",
-                    year: "Year: 1955",
-                    genre: "Genre:Fantasy/Adventure"
+                    genre: "Genre"
+                },
+                {
+                    genre: "Genre"
                 }
             ],
+            
         }
     }
-    addBook() {
-        this.state.books.push({
-            title: "Title:",
-            author: "Author:",
-            year: "Year:",
-            genre: "Genre:"
+    addShelf() {
+        this.state.shelves.push({
+            genre: "Genre"
         });
         this.setState({
-            books: this.state.books
+            genres: this.state.genres
         }
         );
     }
     render() {
         return (
             <div>
-                <div className="div-bookshelf">
+                <div className="bookshelf">
                     <div className="row">
                     {
-                    this.state.books.map(book => {
-                         return <Book title={book.title} author={book.author} year={book.year} genre= {book.genre}/>
-                    })
+                        this.state.shelves.map(shelf => {
+                            return <Shelf genre = {shelf.genre}/>
+                        })
                     }
                     </div>
                 </div>        
-                <div className="button1"><button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button> </div>
+                <div className="button1"><button className="btn btn-success add-button" onClick={this.addShelf.bind(this)}>Add Shelf</button> </div>
             </div>
         )
     };
