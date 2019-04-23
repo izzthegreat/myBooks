@@ -8,27 +8,34 @@ class Book extends Component {
     }
     render(){
         return (
-            <div className="col-sm-3">
-            <div className="card card-view">
-            <div className="card-body">
-            <h5 className="card-title">{this.props.title}</h5>
-            <p>{this.props.author}</p>
-            <p>{this.props.year}</p>
-            <p>{this.props.genre}</p>
-            <div><button className="btn btn-success edit-button">Edit</button> </div>
-            <div><button className="btn btn-warning delete-button">Delete</button> </div>
-            </div>
-            </div>
+            <div className="col-3">
+                <div className="card card-view">
+                    <div className="card-body">
+                        <div className="spine">
+                            <div className="spine-text">
+                                <h4 className="card-title">
+                                    {this.props.title}
+                                </h4>
+                                {this.props.author}
+                            </div>
+                        </div>
+                        <div className="buttons">
+                            {this.props.year}<br/>
+                            <button className="btn btn-success edit-button">Edit</button><br/>
+                            <button className="btn btn-warning delete-button">Delete</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
 Book.defaultProps = {
-    title: "Title:",
-    author: "Author:",
-    year: "Year:",
-    genre: "Genre:"
+    title: "Title",
+    author: "Author",
+    year: "Year",
+    genre: "Genre"
 };
 
 Book.propTypes = {
