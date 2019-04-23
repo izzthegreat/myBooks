@@ -59,7 +59,6 @@ class Shelf extends Component{
                     }
                     </div>
                 </div>        
-                <div className="button1"><button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add</button> </div>
                 <div className="button1"><button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add Book</button> </div>
             </div>
         )
