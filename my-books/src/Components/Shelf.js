@@ -47,6 +47,7 @@ class Shelf extends Component{
             notes: newBookArr
         });
     }
+
     render() {
         return (
             <div>
