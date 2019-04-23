@@ -58,7 +58,7 @@ class Shelf extends Component{
                     <div className="row">
                     {
                         this.state.books.map(book => {
-                            return <Book key={book.id}id={book.id}deleteHandler={this.deleteBook.bind(this)}/>
+                            return <Book id={book.id}deleteHandler={this.deleteBook.bind(this)}/>
                         })
                     }
                     </div>
