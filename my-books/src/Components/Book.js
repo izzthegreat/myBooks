@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import '../CSS/Book.css';
 import PropTypes from 'prop-types';
 
-const GENERIC_NOTE_TITLE = "New Note Title", GENERIC_NOTE_AUTHOR = "New Note Body";
-const GENERIC_NOTE_YEAR = "1991", GENERIC_NOTE_GENRE = "New";
+const GENERIC_NOTE_TITLE = "Title", GENERIC_NOTE_AUTHOR = "Author";
+const GENERIC_NOTE_YEAR = "XXXX", GENERIC_NOTE_GENRE = "Genre";
 class Book extends Component {
     constructor() {
         super();
