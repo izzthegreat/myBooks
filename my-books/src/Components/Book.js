@@ -35,7 +35,7 @@ class Book extends Component {
         this.props.deleteHandler(this.props.id);
     }
     render(){
-        let titleElement, authorElement, yearElement, genreElement, buttonArea;
+        let titleElement, authorElement, yearElement, genreElement, buttonArea, readButton;
         if(this.state.editMode){
             titleElement = <textarea ref="titleContent" className="title-textarea" defaultValue={this.state.title}/>
             authorElement = <textarea ref="authorContent" className="author-textarea" defaultValue={this.state.author}/>
@@ -48,7 +48,7 @@ class Book extends Component {
             yearElement = <h5>{this.state.year}</h5>
             genreElement = <h5>{this.state.genre}</h5>
             buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
-
+            // readButton = <button className="btn btn-info" onClick={this.value = "read"}>Unread</button>
         }
         
         return (
@@ -66,6 +66,7 @@ class Book extends Component {
                         <div className="buttons">
                             {yearElement}<br/>
                             {buttonArea}
+                            {readButton}
                         </div>
                     </div>
                 </div>
