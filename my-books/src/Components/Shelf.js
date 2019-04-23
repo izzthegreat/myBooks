@@ -48,33 +48,13 @@ class Shelf extends Component{
         });
     }
     render() {
-        
-        return (
-            <div>
-                <div className="div-bookshelf">
-                    <div className="row">
-                    {
-                        this.state.books.map(book => {
-                            return <Book key={book.id}id={book.id}deleteHandler={this.deleteBook.bind(this)}
-                />
-            title: "Title",
-            author: "Author",
-            year: "Year",
-            genre: "Genre"
-        });
-        this.setState({
-            books: this.state.books
-        }
-        );
-    }
-    render() {
         return (
             <div>
                 <div className="shelf">
                     <div className="row">
                     {
                         this.state.books.map(book => {
-                            return <Book title={book.title} author={book.author} year={book.year} genre= {book.genre}/>
+                            return <Book key={book.id}id={book.id}deleteHandler={this.deleteBook.bind(this)}/>
                         })
                     }
                     </div>
