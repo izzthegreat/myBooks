@@ -1,21 +1,12 @@
 import React, {Component} from 'react'
 import "../CSS/Bookshelf.css"
 import Shelf from './Shelf';
-import {NavLink} from 'react-router-dom'
 
 class Bookshelf extends Component{
     constructor(){
         super();
         this.state = {
             shelves: [
-                {
-                    genre: "Genre",
-                    id: performance.now()
-                },
-                {
-                    genre: "Genre",
-                    id: performance.now()
-                },
                 {
                     genre: "Genre",
                     id: performance.now()

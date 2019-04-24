@@ -42,18 +42,16 @@ class Book extends Component {
         this.props.deleteHandler(this.props.id);
     }
     render(){
-        let titleElement, authorElement, yearElement, genreElement, buttonArea, readButton;
+        let titleElement, authorElement, yearElement, buttonArea, readButton;
         if(this.state.editMode){
             titleElement = <textarea ref="titleContent" className="title-textarea" defaultValue={this.state.title}/>
             authorElement = <textarea ref="authorContent" className="author-textarea" defaultValue={this.state.author}/>
             yearElement = <textarea ref="yearContent" className="year-textarea" defaultValue={this.state.year}/>
-            genreElement = <textarea ref="genreContent" className="genre-textarea" defaultValue={this.state.genre}/>
             buttonArea = <div><button className="btn btn-info" onClick={this.handleSave.bind(this)}>Save</button></div>
         } else {
             titleElement = <h5>{this.state.title}</h5>
             authorElement = <h5>{this.state.author}</h5>
             yearElement = <h5>{this.state.year}</h5>
-            genreElement = <h5>{this.state.genre}</h5>
             buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
             readButton = <button className="btn btn-primary" onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
         }
