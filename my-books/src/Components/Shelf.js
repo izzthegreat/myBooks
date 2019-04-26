@@ -41,9 +41,10 @@ class Shelf extends Component{
     }
 
     addBook() {
+        let color = this.getSpine()
         this.state.books.push({
           id: performance.now(),
-          class: this.getSpine()
+          class: color
         });
         this.setState({
           books: this.state.books
@@ -69,8 +70,7 @@ class Shelf extends Component{
                     <div className="row">
                     {
                         this.state.books.map(book => {
-                            console.log(this.getSpine());
-                            return <Book id={book.id} color={this.getSpine()}  deleteHandler={this.deleteBook.bind(this)}/>
+                            return <Book id={book.id} color={book.class}  deleteHandler={this.deleteBook.bind(this)}/>
                         })
                     }
                     </div>
