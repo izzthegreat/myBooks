@@ -43,11 +43,14 @@
     font-family: Verdana, Tahoma, sans-serif;
     margin: auto;
     display: block;
-    width: 60px
+    width: 60px;
+    color: white;
+    font-variant: small-caps;
 }
 
 .edit{
     background-color: yellow;
+    color: black;
 }
 
 .delete{
@@ -64,4 +67,5 @@
 
 .unread{
     background-color: cyan;
+    color: black;
 }
