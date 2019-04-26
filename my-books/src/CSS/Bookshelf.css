@@ -1,3 +1,16 @@
 .bookshelf {
-    background-image: "..\Images\Shelf-BkGrnd.jpg"
+    background-image: url("../Images/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+
+.add-shelf{
+    border-radius: 6px;
+    border: none;
+    font-family: Verdana, Tahoma, sans-serif;
+    display: block;
+    background-color: green;
 }

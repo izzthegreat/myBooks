@@ -12,6 +12,7 @@ class Shelf extends Component{
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
                     genre: "RPG",
+                    class:"rust",
                     id: performance.now()
                 },
                 {
@@ -19,6 +20,7 @@ class Shelf extends Component{
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
                     genre: "RPG",
+                    class:"blue", 
                     id: performance.now()
                 },
                 {
@@ -26,19 +28,28 @@ class Shelf extends Component{
                     author: "Dave Arneson/Gary Gygax",
                     year: "1974",
                     genre: "GRPG",
+                    class:"yellow",
                     id: performance.now()
                 }
             ]
         }
     }
+
+    getSpine() {
+        let colors = ['rust', 'blue', 'yellow']
+        return colors [parseInt(Math.random()*10)%3]
+    }
+
     addBook() {
         this.state.books.push({
-          id: performance.now()
+          id: performance.now(),
+          class: this.getSpine()
         });
         this.setState({
           books: this.state.books
         });
-      }
+    }
+
     deleteBook(id) {
         let newBookArr = this.state.books;
         newBookArr.map((book, index) => {
@@ -58,12 +69,15 @@ class Shelf extends Component{
                     <div className="row">
                     {
                         this.state.books.map(book => {
-                            return <Book id={book.id} deleteHandler={this.deleteBook.bind(this)}/>
+                            console.log(this.getSpine());
+                            return <Book id={book.id} color={this.getSpine()}  deleteHandler={this.deleteBook.bind(this)}/>
                         })
                     }
                     </div>
                 </div>        
-                <div className="button1"><button className="btn btn-success add-button" onClick={this.addBook.bind(this)}>Add Book</button> </div>
+                <div>
+                    <button className="add" onClick={this.addBook.bind(this)}>Add Book</button>
+                </div>
             </div>
         )
     };

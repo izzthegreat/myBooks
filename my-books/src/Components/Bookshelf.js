@@ -41,7 +41,7 @@ class Bookshelf extends Component{
                     }
                     </div>
                 </div>        
-                <div className="button1"><button className="btn btn-success add-button" onClick={this.addShelf.bind(this)}>Add Shelf</button> </div>
+                <div className="button1"><button className="add-shelf" onClick={this.addShelf.bind(this)}>Add Shelf</button> </div>
             </div>
         )
     };

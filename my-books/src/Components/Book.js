@@ -42,41 +42,38 @@ class Book extends Component {
         this.props.deleteHandler(this.props.id);
     }
     render(){
-        let titleElement, authorElement, yearElement, buttonArea, readButton;
+        let titleElement, authorElement, yearElement, buttonArea
         if(this.state.editMode){
-            titleElement = <textarea ref="titleContent" className="title-textarea" defaultValue={this.state.title}/>
-            authorElement = <textarea ref="authorContent" className="author-textarea" defaultValue={this.state.author}/>
-            yearElement = <textarea ref="yearContent" className="year-textarea" defaultValue={this.state.year}/>
-            buttonArea = <div><button className="btn btn-info" onClick={this.handleSave.bind(this)}>Save</button></div>
+            titleElement = <textarea ref="titleContent"  defaultValue={this.state.title}/>
+            authorElement = <textarea ref="authorContent"  defaultValue={this.state.author}/>
+            yearElement = <textarea ref="yearContent"  defaultValue={this.state.year}/>
+            buttonArea = <div>
+                <button className="btn save" onClick={this.handleSave.bind(this)}>Save</button>
+            </div>
         } else {
-            titleElement = <h5>{this.state.title}</h5>
-            authorElement = <h5>{this.state.author}</h5>
-            yearElement = <h5>{this.state.year}</h5>
-            buttonArea = <div><button className="btn btn-warning" onClick={this.handleEdit.bind(this)}>Edit</button><button className="btn btn-danger" onClick={this.handleDelete.bind(this)}>Delete</button></div>
-            readButton = <button className="btn btn-primary" onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
+            titleElement = <span>{this.state.title}</span>
+            authorElement = <span>{this.state.author}</span>
+            yearElement = <span>{this.state.year}</span>
+            buttonArea = <div>
+                <button className="btn edit" onClick={this.handleEdit.bind(this)}>Edit</button>
+                <button className="btn delete" onClick={this.handleDelete.bind(this)}>Delete</button>
+                <button className={this.state.isToggleOn ? "btn read" : "btn unread"} onClick={this.handleClick}>{this.state.isToggleOn ? 'Read' : 'Unread'}</button>
+            </div>
         }
         
         return (
-            <div className="col-3">
-                <div className="card card-view">
-                    <div className="card-body">
-                        <div className="spine">
-                            <div className="spine-text">
-                                <h4 className="card-title">
-
+                    <div className={`${this.props.color} book`}>
+                        <div className="text">
+                                <h4>
                                     {titleElement}
                                 </h4>
                                 {authorElement}
-                            </div>
                         </div>
                         <div className="buttons">
                             {yearElement}<br/>
                             {buttonArea}
-                            {readButton}
                         </div>
                     </div>
-                </div>
-            </div>
         )
     }
 }
