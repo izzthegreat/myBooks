@@ -2,7 +2,8 @@
     background-image: url("../Images/background.jpeg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
     min-height: 100vh;
     min-width: 100vh;
 }
