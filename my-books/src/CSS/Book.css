@@ -22,7 +22,7 @@
 }
 
 .text{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     display: inline-block;
     transform: rotate(90deg) translate(70px, 53px);
     height: 90px;

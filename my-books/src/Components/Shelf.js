@@ -37,7 +37,7 @@ class Shelf extends Component{
 
     getSpine() {
         let colors = ['rust', 'blue', 'yellow']
-        return colors [parseInt(Math.random()*10)%3]
+        return colors[parseInt(Math.random()*10)%3]
     }
 
     addBook() {

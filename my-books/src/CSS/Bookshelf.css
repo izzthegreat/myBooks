@@ -1,14 +1,14 @@
-.bookshelf {
+body {
     background-image: url("../Images/background.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: repeat-y;
     background-attachment: fixed;
-    min-height: 100vh;
-    min-width: 100vh;
+    min-height: 100%;
+    min-width: 100%;
 }
 
-.add-shelf{
+.add-shelf {
     border-radius: 6px;
     border: none;
     font-family: Verdana, Tahoma, sans-serif;

@@ -31,7 +31,7 @@ class Bookshelf extends Component{
     }
     render() {
         return (
-            <div>
+            <div className="background">
                 <div className="bookshelf">
                     <div className="row">
                     {
